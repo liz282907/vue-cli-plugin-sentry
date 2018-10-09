@@ -8,7 +8,8 @@ Then create a project and add the Sentry plugin:
 ```
 vue create your-app
 cd your-app
-vue add sentry
+vue add sentry 
 ```
+If you want to update your setting,just type `vue invoke sentry`;
 
 You'll be asked some questions regarding how sentry/raven is configured in your project. After that, you're good to go.

@@ -1,20 +1,16 @@
 /**
- * @description 负责raven的注册
+ * @description 负责raven的注册。其中generator执行后更新release并挂载到process.env上。
  */
 
-const { hasGit, execa } = require('@vue/cli-shared-utils');
-const { getPluginName } = require('../util');
-
-const getGitSha = ()=>{
-  const { stdout } = execa.shellSync('git rev-parse HEAD');
-  return stdout.substr(0, 7);
-};
+const { hasGit } = require('@vue/cli-shared-utils');
+const { getPluginName,getGitSha } = require('../util');
 
  module.exports = (api, opts) => {
 
     if((opts['release-mode']==='auto' && hasGit()) || !opts.release){
         opts.release = getGitSha();
     }
+    process.env.__GIT_SHA__ = opts.release;
 
     api.extendPackage({
       dependencies: {
