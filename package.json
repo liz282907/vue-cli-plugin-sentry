@@ -1,5 +1,5 @@
 {
-  "name": "sentry-plugin",
+  "name": "vue-cli-plugin-sentry",
   "version": "1.0.0",
   "description": "a vue-cli plugin for sentry",
   "main": "index.js",
