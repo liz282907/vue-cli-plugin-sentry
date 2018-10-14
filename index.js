@@ -42,6 +42,12 @@ module.exports = (api, projectOptions) => {
     api.chainWebpack(webpackConfig => {
       webpackConfig.plugin('SentryPlugin')
         .use(SentryPlugin,[webpackSentryPluginOptions]);
+      webpackConfig.plugin('DefinePlugin')
+        .use(require.resolve('webpack/lib/DefinePlugin'), [{
+            'process.env': {
+                __GIT_SHA__: `"${GIT_SHA}"`
+            }
+        }]);
     });
 
 };
