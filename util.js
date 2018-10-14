@@ -16,6 +16,6 @@ module.exports = {
       return hash.substr(0, 7);
     },
     isProduction(){
-      return ['production','online'].indexOf(process.env.NODE_ENV)>=0;
+      return 'production' === process.env.NODE_ENV;
     }
   };
