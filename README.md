@@ -13,3 +13,7 @@ vue add sentry
 If you want to update your setting,just type `vue invoke sentry`;
 
 You'll be asked some questions regarding how sentry/raven is configured in your project. After that, you're good to go.
+
+## Release Guide
+
+run `yarn release -- --release-as patch/minor/major` if you want to release the repo. 

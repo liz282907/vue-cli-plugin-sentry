@@ -4,7 +4,8 @@
   "description": "a vue-cli plugin for sentry",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "license": "ISC",
   "dependencies": {
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "standard-version": "^4.4.0"
   }
 }
