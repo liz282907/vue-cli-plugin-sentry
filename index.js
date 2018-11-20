@@ -19,11 +19,10 @@ function optionValidator(options){
 function extractFromOptions(projectOptions){
 
     const defaultOptions = {
-        deleteAfterCompile:true,
         suppressConflictError: true
     };
     const receivedOptions = projectOptions.pluginOptions[getPluginName()];
-    const options = optionValidator(Object.assign(receivedOptions,defaultOptions));
+    const options = optionValidator(Object.assign(defaultOptions,receivedOptions));
     const {'release-mode': releaseMode, dsn, ...others } = options;
 
     if(releaseMode==='auto'){
